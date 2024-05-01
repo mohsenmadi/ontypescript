@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",           // Set the JavaScript version output
+    "module": "commonjs",         // CommonJS modules for Node.js
+    "outDir": "./dist",           // Output directory for compiled files
+    "rootDir": "./src",           // Source files directory
+    "strict": true,               // Enable all strict type-checking options
+    "esModuleInterop": true,      // Enables interoperation between CommonJS and ES Modules
+    "skipLibCheck": true,         // Skip type checking of declaration files
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*"],        // Include all files in the src directory
+  "exclude": ["node_modules"]     // Exclude the node_modules directory
+}
