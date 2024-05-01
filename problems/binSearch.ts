@@ -7,8 +7,6 @@ const binSearch = (arr: number[], target: number): number => {
 
     const mid = left + Math.floor((right - left) / 2);
 
-    console.log('=lrm=', left, right, mid);
-
     if (target === arr[mid]) {
       return mid;
     } else if (target < arr[mid]) {
