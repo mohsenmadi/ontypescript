@@ -12,7 +12,7 @@ class TreeNode<T> {
 
 class BinarySearchTree<T> {
   root: TreeNode<T> | null = null;
-  largeVals: T[] = [];
+  _largeVals: T[] = [];
 
   insert(value: T) {
     const newNode = new TreeNode(value);
@@ -33,16 +33,16 @@ class BinarySearchTree<T> {
 
   findSecondLargest(): T {
     this._findSecondLargest();
-    console.log(this.largeVals);
-    return this.largeVals.length < 2 ? null : this.largeVals[0];
+    console.log(this._largeVals);
+    return this._largeVals.length < 2 ? null : this._largeVals[0];
   }
 
   _findSecondLargest(node = this.root) {
     if (node) {
       this._findSecondLargest(node.left);
-      this.largeVals.push(node.value);
-      if (this.largeVals.length > 2) {
-        this.largeVals.shift();
+      this._largeVals.push(node.value);
+      if (this._largeVals.length > 2) {
+        this._largeVals.shift();
       }
       this._findSecondLargest(node.right);
     }
@@ -85,3 +85,5 @@ bst.insert(24);
 bst.inOrder();
 console.log('== the largest element is', bst.findLargest());
 console.log('== the 2largest element is', bst.findSecondLargest());
+
+export {}

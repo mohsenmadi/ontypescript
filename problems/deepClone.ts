@@ -22,3 +22,5 @@ setTimeout(() => {
   console.log('=array-clone=', clone.address.place.usual);
   console.log('=array-string=', stringifiedClone.address.place.usual);
 }, 5234);
+
+export {}

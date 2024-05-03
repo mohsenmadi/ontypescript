@@ -12,3 +12,5 @@ app.listen(PORT, () => {
 });
 
 // https://apply.personal.easternbank.com/onboarding-us/product-selection-list
+
+export {}

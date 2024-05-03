@@ -20,6 +20,7 @@ class TrieOps {
 
   search = (word: string): boolean => {
     let node = this.root;
+
     for (let char of word) {
       if (!node.children.has(char)) {
         return false;
@@ -44,3 +45,5 @@ const searchStrings = ['hello', 'world', 'help', 'helix', 'helloo', 'hero'];
 searchStrings.forEach(searchStr => {
   console.log(`== ${searchStr} is ${trie.search(searchStr)}`);
 })
+
+export {}

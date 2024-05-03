@@ -18,3 +18,5 @@ const array1 = [1, 2, 3, 4, 2];
 const array2 = [2, 5, 6, 7, 4];
 
 console.log(findCommonItems(array1, array2));
+
+export {}
