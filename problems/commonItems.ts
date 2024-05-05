@@ -1,4 +1,4 @@
-function findCommonItems<T>(array1: T[], array2: T[]): T[] {
+function commonItems<T>(array1: T[], array2: T[]): T[] {
 
   const set1 = new Set(array1);
 
@@ -17,6 +17,6 @@ function findCommonItems<T>(array1: T[], array2: T[]): T[] {
 const array1 = [1, 2, 3, 4, 2];
 const array2 = [2, 5, 6, 7, 4];
 
-console.log(findCommonItems(array1, array2));
+console.log(commonItems(array1, array2));
 
 export {}
