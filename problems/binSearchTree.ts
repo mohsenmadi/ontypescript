@@ -23,6 +23,22 @@ class BinarySearchTree<T> {
     }
   }
 
+  private _insertNode(newNode: TreeNode<T>, curRoot: TreeNode<T>) {
+    if (newNode.value < curRoot.value) {
+      if (curRoot.left) {
+        this._insertNode(newNode, curRoot.left);
+      } else {
+        curRoot.left = newNode;
+      }
+    } else {
+      if (curRoot.right) {
+        this._insertNode(newNode, curRoot.right);
+      } else {
+        curRoot.right = newNode;
+      }
+    }
+  }
+
   findLargest(): T {
     let curNode = this.root;
     while (curNode.right) {
@@ -33,7 +49,6 @@ class BinarySearchTree<T> {
 
   findSecondLargest(): T {
     this._findSecondLargest();
-    console.log(this._largeVals);
     return this._largeVals.length < 2 ? null : this._largeVals[0];
   }
 
@@ -53,22 +68,6 @@ class BinarySearchTree<T> {
       this.inOrder(node.left);
       console.log(node.value + ' ');
       this.inOrder(node.right);
-    }
-  }
-
-  private _insertNode(newNode: TreeNode<T>, curRoot: TreeNode<T>) {
-    if (newNode.value < curRoot.value) {
-      if (curRoot.left) {
-        this._insertNode(newNode, curRoot.left);
-      } else {
-        curRoot.left = newNode;
-      }
-    } else {
-      if (curRoot.right) {
-        this._insertNode(newNode, curRoot.right);
-      } else {
-        curRoot.right = newNode;
-      }
     }
   }
 }

@@ -1,3 +1,5 @@
+// find duplicates in an array
+
 const findDuplicates = <T>(arr: T[]): T[] => {
 
   const map = new Map<T, number>();

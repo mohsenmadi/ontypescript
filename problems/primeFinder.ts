@@ -47,4 +47,4 @@ primes(200)
 
 console.log(data);
 
-export {}
+export {};

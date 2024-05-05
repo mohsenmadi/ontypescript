@@ -4,7 +4,7 @@ const mostRepeated = <T>(array: T[]): T | 'none' => {
   }
 
   const map = new Map<T, number>();
-  let mostRep;
+  let mostRep = undefined;
   let maxCount = 0;
 
   array.forEach((element: T) => {
@@ -29,7 +29,7 @@ const mostRepeated = <T>(array: T[]): T | 'none' => {
   return mapMaxValue === maxCount ? 'none' : mostRep;
 };
 
-const data = [1, 2, 3, 4, 3, 5, 2, 3, 1, 5, 3, 5, 3, 1, 1, 1, 2, 5, 1, 3];
+const data = [1, 2, 3, 4, 3, 5, 2, 3, 1, 5, 3, 5, 3, 1, 1, 1, 2, 5, 1];
 console.log(mostRepeated(data));
 
 export {};

@@ -1,3 +1,5 @@
+// LinkedList class, each elem is SimpleNode, then insert, remove, getLast...
+
 class SimpleNode<T> {
   data: T;
   next?: SimpleNode<T>;

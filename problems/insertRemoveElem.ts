@@ -1,3 +1,5 @@
+// toggler: remove if there, insert if not; works in say selected checkboxes....
+
 class ToggleSet<T> {
   private set: Set<T> = new Set<T>();
 
