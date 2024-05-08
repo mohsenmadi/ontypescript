@@ -6,10 +6,8 @@ const findDuplicates = <T>(arr: T[]): T[] => {
   let duplicates: T[] = [];
 
   arr.forEach((item: T) => {
-    let count = map.get(item);
-    if (!count) {
-      count = 0;
-    } else {
+    let count = map.get(item) || 0;
+    if (count > 0) {
       duplicates.push(item);
     }
     map.set(item, ++count);

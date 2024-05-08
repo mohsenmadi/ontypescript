@@ -8,10 +8,7 @@ const mostRepeated = <T>(array: T[]): T | 'none' => {
   let maxCount = 0;
 
   array.forEach((element: T) => {
-    let count = map.get(element);
-    if (!count) {
-      count = 0;
-    }
+    let count = map.get(element) || 0;
     map.set(element, ++count);
 
     if (count > maxCount) {
@@ -20,16 +17,18 @@ const mostRepeated = <T>(array: T[]): T | 'none' => {
     }
   });
 
-  console.log(map)
+  console.log(map, mostRep);
 
   map.delete(mostRep);
 
-  const mapMaxValue = Math.max(...[...map.values()])
+  // const mapMaxValue = Math.max(...[...map.values()])
+  // return mapMaxValue === maxCount ? 'none' : mostRep;
 
-  return mapMaxValue === maxCount ? 'none' : mostRep;
+  const mapMaxCountSame = new Set([...map.values()]).has(maxCount);
+  return mapMaxCountSame ? 'none' : mostRep;
 };
 
-const data = [1, 2, 3, 4, 3, 5, 2, 3, 1, 5, 3, 5, 3, 1, 1, 1, 2, 5, 1];
+const data = [1, 2, 4, 5, 2, 1, 5, 5, 1, 1, 1, 2, 5, 5];
 console.log(mostRepeated(data));
 
 export {};

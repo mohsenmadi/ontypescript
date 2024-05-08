@@ -61,7 +61,7 @@ class LinkedList<T> {
 
 const linkedList = new LinkedList();
 
-[1].forEach((value) => linkedList.insert(value));
+[1, 2, 3, 4].forEach((value) => linkedList.insert(value));
 
 linkedList.displayList();
 linkedList.remove(1);

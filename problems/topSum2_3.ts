@@ -1,4 +1,4 @@
-const topSum2 = (arr: number[], target: number, skipIndex: number): number[] => {
+const topSum2 = (arr: number[], target: number, skipIndex = -1): number[] => {
   const map = new Map<number, number>();
   for (let i = 0; i < arr.length; i++) {
     if (i === skipIndex) continue;
@@ -17,7 +17,6 @@ const topSum3 = (arr: number[], target: number): number[] => {
     if (!ts2.length || ts2.includes(i)) {
       continue;
     }
-    console.log(arr[i], arr[ts2[0]], arr[ts2[1]])
     if (arr[i] + arr[ts2[0]] + arr[ts2[1]] === target) {
       return [i, ...ts2];
     }
@@ -25,4 +24,5 @@ const topSum3 = (arr: number[], target: number): number[] => {
   return [];
 };
 
-console.log(topSum3([2, 7, 11, 15, 4, 1], 11));
+console.log(topSum2([2, 7, 11, 15, 4, 1], 11));
+console.log(topSum3([2, 7, 11, 15, 4, 1], 12));

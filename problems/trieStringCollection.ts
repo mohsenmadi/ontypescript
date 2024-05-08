@@ -1,6 +1,6 @@
 class TrieNode {
   children: Map<string, TrieNode> = new Map()
-  isLeaf = false;
+  isWord = false;
 }
 
 class TrieOps {
@@ -15,7 +15,7 @@ class TrieOps {
       }
       node = node.children.get(char);
     })
-    node.isLeaf = true;
+    node.isWord = true;
   };
 
   search = (word: string): boolean => {
@@ -27,7 +27,7 @@ class TrieOps {
       }
       node = node.children.get(char);
     }
-    return node.isLeaf;
+    return node.isWord;
   };
 }
 
