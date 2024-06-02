@@ -14,15 +14,6 @@ class BinarySearchTree<T> {
   root: TreeNode<T> | null = null;
   _largeVals: T[] = [];
 
-  insert(value: T) {
-    const newNode = new TreeNode(value);
-    if (!this.root) {
-      this.root = newNode;
-    } else {
-      this._insertNode(newNode, this.root);
-    }
-  }
-
   private _insertNode(newNode: TreeNode<T>, curRoot: TreeNode<T>) {
     if (newNode.value < curRoot.value) {
       if (curRoot.left) {
@@ -36,6 +27,15 @@ class BinarySearchTree<T> {
       } else {
         curRoot.right = newNode;
       }
+    }
+  }
+  
+  insert(value: T) {
+    const newNode = new TreeNode(value);
+    if (!this.root) {
+      this.root = newNode;
+    } else {
+      this._insertNode(newNode, this.root);
     }
   }
 

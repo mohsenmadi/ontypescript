@@ -26,3 +26,6 @@ toggleSet.printSet();
 
 
 export {}
+
+
+// what if on an array?
